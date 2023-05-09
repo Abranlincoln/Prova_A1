@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Avaliação A1</title>
+	<meta charset="UTF-8">
+	<style>
+		body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #adadad;
+			font-family: Arial, sans-serif;
+		}
+		input[type=text] {
+            padding-left: 15;
+			padding: 10px;
+			border-radius: 5px;
+            background-color: #adadad;
+			border: 2px solid #94055d;
+		}
+		button {
+			padding: 10px 20px;
+			background-color: #94055d;
+			color: rgb(255, 255, 255);
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #646964;
+		}
+        label{
+
+            font-size: 20px;
+            color: #000000;
+        }
+        h1{
+            font-style: italic;
+            font-size: 50px;
+            color: #000000;
+        }
+	</style>
+</head>
+<body>
+	<h1>Questão 1</h1>
+	<label>Digite um número de 9 dígitos:</label><br>
+	<input type="text" id="primeiroDigito" maxlength="9"><br>
+	<label>Digite um número de 2 dígitos:</label><br>
+	<input type="text" id="segundoDigito" maxlength="2"><br>
+	<button onclick="validarEntrada()">Validar entrada</button>
+	<p id="resto"></p>
+
+	<script>
+		function validarEntrada() {
+
+			var primeiroDigito = document.getElementById("primeiroDigito").value;
+			var segundoDigito = document.getElementById("segundoDigito").value;
+			var resto = document.getElementById("resto");
+
+			if (!/^[\d]{9}$/.test(primeiroDigito) || !/^[\d]{2}$/.test(segundoDigito)) {
+				resto.innerHTML = "Digite apenas números || Verifique se os campos estão preenchidos corretamente";
+				return;
+			}
+
+			var somaPrimeiroDigito = 0;
+			var somaSegundoDigito = 0;
+			for (var i = 0; i < primeiroDigito.length; i++) {
+				somaPrimeiroDigito += parseInt(primeiroDigito.charAt(i));
+			}
+			for (var i = 0; i < segundoDigito.length; i++) {
+				somaSegundoDigito += parseInt(segundoDigito.charAt(i));
+			}
+
+			if (somaSegundoDigito == 0) {
+				resto.innerHTML = "Entrada IN-válida";
+				return;
+			}
+
+			if (somaPrimeiroDigito % somaSegundoDigito == 0 || somaPrimeiroDigito % somaSegundoDigito == 2 || somaPrimeiroDigito % somaSegundoDigito == 6 || somaPrimeiroDigito % somaSegundoDigito == 8) {
+				resto.innerHTML = "Entrada válida";
+			} else {
+				resto.innerHTML = "Entrada IN-válida";
+			}
+		}
+	</script>
+</body>
+</html>
