@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Avaliação A1</title>
 	<meta charset="UTF-8">
 	<style>
 		body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #adadad;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: #adadad;
 			font-family: Arial, sans-serif;
 		}
+
 		input[type=text] {
-            padding-left: 15;
+			padding-left: 15;
 			padding: 10px;
 			border-radius: 5px;
-            background-color: #adadad;
+			background-color: #adadad;
 			border: 2px solid #94055d;
 		}
+
 		button {
 			padding: 10px 20px;
 			background-color: #94055d;
@@ -26,21 +29,25 @@
 			border-radius: 5px;
 			cursor: pointer;
 		}
+
 		button:hover {
 			background-color: #646964;
 		}
-        label{
 
-            font-size: 20px;
-            color: #000000;
-        }
-        h1{
-            font-style: italic;
-            font-size: 50px;
-            color: #000000;
-        }
+		label {
+
+			font-size: 20px;
+			color: #000000;
+		}
+
+		h1 {
+			font-style: italic;
+			font-size: 50px;
+			color: #000000;
+		}
 	</style>
 </head>
+
 <body>
 	<h1>Questão 1</h1>
 	<label>Digite um número de 9 dígitos:</label><br>
@@ -58,7 +65,7 @@
 			var resto = document.getElementById("resto");
 
 			if (!/^[\d]{9}$/.test(primeiroDigito) || !/^[\d]{2}$/.test(segundoDigito)) {
-				resto.innerHTML = "Digite apenas números || Verifique se os campos estão preenchidos corretamente";
+				resto.innerHTML = "Digite apenas números!!! Ou verifique se os campos estão preenchidos completamente!!!";
 				return;
 			}
 
@@ -84,4 +91,5 @@
 		}
 	</script>
 </body>
+
 </html>
