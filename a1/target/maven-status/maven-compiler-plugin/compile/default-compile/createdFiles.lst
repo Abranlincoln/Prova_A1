@@ -1,0 +1,6 @@
+A1\Avaliacao\Controller\AlunoController.class
+A1\Avaliacao\Dominio\Aluno.class
+A1\Avaliacao\Repository\CursoRepository.class
+A1\Avaliacao\Controller\CursoController.class
+A1\Avaliacao\Dominio\Curso.class
+A1\Avaliacao\Repository\AlunoRepository.class
